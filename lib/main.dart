@@ -125,20 +125,38 @@ class _HomeState extends State<Home> {
                 },
               ),
               SizedBox(height: 20.0),
-              Container(
-                height: 50.0,
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      calcular();
-                    }
-                  },
-                  child: Text(
-                    "Calcular",
-                    style: TextStyle(color: Colors.white, fontSize: 25.0),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          calcular();
+                        }
+                      },
+                      child: Text(
+                        "Calcular",
+                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue, // Cor de fundo do botão
+                      ),
+                    ),
                   ),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                ),
+                  SizedBox(width: 10.0),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: limparCampos,
+                      child: Text(
+                        "Limpar",
+                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red, // Cor de fundo do botão
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 20.0),
               Text(
